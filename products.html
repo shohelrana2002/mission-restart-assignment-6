@@ -3,39 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>SwiftCart</title>
-    <script type="module" src="./js/main.js"></script>
+    <title>All Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="bg-gray-100">
-    <!-- Navbar add -->
-    <div class="mb-16" id="navbar"></div>
-    <!-- Hero ba Banner -->
-    <div id="hero-section"></div>
-    <!-- features -->
-    <div id="features-section"></div>
-    <!-- trending section -->
+  <body>
+    <div id="navbar"></div>
 
-    <div id="trending-section"></div>
-
-    <!-- Product Modal -->
-    <div
-      id="product-modal"
-      class="hidden fixed inset-0 bg-transparent bg-opacity-50 flex justify-center items-center z-50"
-    >
-      <div class="bg-white p-6 rounded-lg w-11/12 md:w-2/3 lg:w-1/2 relative">
-        <button
-          id="close-modal"
-          class="absolute text-red-600 cursor-pointer top-3 right-3 text-xl font-bold"
-        >
-          <i class="fa-solid fa-x"></i>
-        </button>
-        <div id="modal-content"></div>
-      </div>
-    </div>
-
-    <!-- footer  -->
+    <div id="products-page"></div>
     <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-6">
         <!-- Grid Section -->
@@ -169,10 +144,10 @@
         </div>
       </div>
     </footer>
-
     <script
       src="https://kit.fontawesome.com/7e2c0be688.js"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="./js/products.js"></script>
   </body>
 </html>
