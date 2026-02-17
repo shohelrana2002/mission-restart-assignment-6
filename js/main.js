@@ -36,26 +36,12 @@ fetch("https://fakestoreapi.com/products")
       if (btn.textContent.includes("Details")) {
         btn.addEventListener("click", async (e) => {
           const id = e.currentTarget.dataset.id;
-          console.log(e);
+          console.log(e.currentTarget.dataset.id);
           const productRes = await fetch(
             `https://fakestoreapi.com/products/${id}`,
           );
           const product = await productRes.json();
           showModal(product);
-        });
-      }
-    });
-
-    // Setup Add to Cart click
-    trendingContainer.querySelectorAll("button").forEach((btn) => {
-      if (btn.textContent.includes("Add to Cart")) {
-        btn.addEventListener("click", async (e) => {
-          const id = e.dataset.id;
-          const productRes = await fetch(
-            `https://fakestoreapi.com/products/${id}`,
-          );
-          const product = await productRes.json();
-          addToCart(product);
         });
       }
     });
@@ -74,22 +60,8 @@ function showModal(product) {
     </button>
   `;
   modal.classList.remove("hidden");
-
-  document.getElementById("modal-add-cart").addEventListener("click", () => {
-    addToCart(product);
-    modal.classList.add("hidden");
-  });
 }
 
 closeModalBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
-
-// Cart
-let cart = [];
-function addToCart(product) {
-  cart.push(product);
-  const cartCount = document.getElementById("cart-count");
-  if (cartCount) cartCount.textContent = cart.length;
-  alert(`${product.title} added to cart `);
-}
